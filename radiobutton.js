@@ -5,7 +5,7 @@ function init(){
 function checkForm() {           
  document.getElementById("Assessment").onsubmit=function(){
     var allowsubmit = false;
-    if (document.getElementById("submit").value==="submit"){ 
+    if (document.getElementById("submit").value==="Calculate"){ 
       var inputElement = document.getElementsByTagName("input");
       riskLevel = determineRiskLevel(getTotalScore(inputElement));
 
@@ -104,7 +104,7 @@ function displayMessage(riskLevel){
     if (riskLevel==="highRisk") {
       messegeText = document.createTextNode(messeges.highRisk);
       extraInfoText = document.createTextNode(messeges.extraInfo);
-      contactFormLink.href = "http://test.com";
+      contactFormLink.href = "ContactForm.html";
       contactFormLink.innerHTML = "Contact form";
     }
     
