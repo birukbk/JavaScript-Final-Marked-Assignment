@@ -11,16 +11,11 @@ function checkForm() {
 
     }
     displayMessage(riskLevel);
-
-    //console.log(age,bmi,familyHistory,diet);
-   // console.log(score(age,bmi,familyHistory,diet));
     console.log(determineRiskLevel(risk));
     console.log(getTotalScore(inputElement));
     console.log(getMainRiskFactors(inputElement));
     console.log(createMainRiskFactorMessage());
-
     return false;
-
  };
 
      

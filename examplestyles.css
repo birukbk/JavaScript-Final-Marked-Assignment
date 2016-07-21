@@ -18,11 +18,22 @@ font-style: italic;
 }
 
 #controls {
-width:50%;
+width:60%;
 padding: 1em;
 }
 #messegeBoard {
-width:50%;
+width:60%;
 padding: 1em;
 display: none;
+}
+.question{
+	display:inline-block;
+	padding-right: 70px;
+	text-align: right;
+	width:180px;
+}
+.choice{
+	display:inline-block;
+	text-align: left;
+	
 }
