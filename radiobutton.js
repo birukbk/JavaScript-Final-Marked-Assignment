@@ -6,14 +6,7 @@ function checkForm() {
  document.getElementById("Assessment").onsubmit=function(){
     var allowsubmit = false;
     if (document.getElementById("submit").value==="submit"){ 
-      //var age = parseInt(selected("age"));
-      //var bmi = parseInt(selected("bmi"));
-      //var familyHistory = parseInt(selected("familyHistory"));
-      //var diet = parseInt(selected("diet"));  
-      //var totalScore= score(age, bmi, familyHistory, diet);
       var inputElement = document.getElementsByTagName("input");
-      //getTotalScore(inputElement);
-      //totalScore = determineRiskLevel(totalScore);
       riskLevel = determineRiskLevel(getTotalScore(inputElement));
 
     }
@@ -32,22 +25,6 @@ function checkForm() {
 
      
 } 
-
-/*function selected(name){
-  var selected = document.getElementsByName(name);
-  var selectedValue;
-  for (var i = 0; i < selected.length; i++) {
-    if(selected[i].checked){
-      selectedValue = selected[i].value;
-    }
-  }
-  return selectedValue;
-} */
-/*function score(age,bmi,familyHistory,diet){
-  totalScore = age+bmi+familyHistory+diet;
-  return totalScore;
-
-}*/
 function getMainRiskFactors(inputElement){
   var index = 0;
   var riskFactors = [];
