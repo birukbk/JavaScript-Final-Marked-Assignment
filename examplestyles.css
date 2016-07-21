@@ -1,0 +1,28 @@
+
+body {
+font-family: Verdana, Arial, sans-serif;
+}
+
+.sectionheading {
+color: #ff0000;
+}
+
+#pageheading{
+font-style: italic; 
+}
+
+.error{
+  display:none;
+  color:red;
+  padding-left: 1em;
+}
+
+#controls {
+width:50%;
+padding: 1em;
+}
+#messegeBoard {
+width:50%;
+padding: 1em;
+display: none;
+}

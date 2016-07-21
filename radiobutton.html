@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title> Diabetes Risk Assessment Tool </title>
+   <link rel="stylesheet" type="text/css" href="examplestyles.css">
+   <script src="radiobutton.js"></script>
+</head>
+<body>
+   <h1 id="pageheading">Zedland Health Authority <br> Diabetes Risk Assessment Tool</h1>
+   <h2 class="sectionheading">complete the following questions</h2>
+   <form id="Assessment">
+   <fieldset id="controls">
+   <div class="age">
+   <label for="age">How old are you?</label>
+      <label for="1to25">1-25 </label>
+      <input type="radio" name="age" value="0" checked="true">
+      <label for="26to40">26-40</label>
+      <input type="radio" name="age" value="5">
+      <label for="41to60">41-60 </label>
+      <input type="radio" name="age" value="8">
+      <label for="60plus">60+</label>
+      <input type="radio" name="age" value="10">
+</div>
+      <div class="bmi">
+      <br>
+      <label for="bmi">what is your BMI?</label>
+      <label for="0to25">0-25 </label>
+      <input type="radio" name="bmi" value="0" checked="true">
+      <label for="26to30">26-30</label>
+      <input type="radio" name="bmi" value="0">
+      <label for="31to35">31-35 </label>
+      <input type="radio" name="bmi" value="9">
+      <label for="35plus">35+</label>
+      <input type="radio" name="bmi" value="10"><br>
+</div>
+      <div class="family">
+      <br>
+      <label for="family">Does anybody in your <br>family have diabetes?</label>
+      <label for="no">No </label>
+      <input type="radio" name="family" value="0" checked="true">
+      <label for="Grandparent">Grandparent</label>
+      <input type="radio" name="family" value="7">
+      <label for="Sibling">Sibling </label>
+      <input type="radio" name="family" value="15">
+      <label for="Parent">Parent</label>
+      <input type="radio" name="family" value="15">
+</div>
+<div class="diet">
+      <br>
+      <label for="diet">How would you<br>describe your diet?</label>
+      <label for="LowSugar">Low sugar </label>
+      <input type="radio" name="diet" value="0" checked="true">
+      <label for="NormalSugar">Normal sugar</label>
+      <input type="radio" name="diet" value="0">
+      <label for="QuiteHighSugar">Quite high sugar </label>
+      <input type="radio" name="diet" value="7">
+      <label for="highSugar">high sugar</label>
+      <input type="radio" name="diet" value="10">
+</div>    
+      <br><input id="submit" type="submit" value="submit">
+   </fieldset>
+</form>
+   <fieldset  id="messegeBoard">
+   </fieldset>
+</body>
+</html>
