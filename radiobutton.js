@@ -42,36 +42,16 @@ function getTotalScore(inputElement) {
 }
 
 function determineRiskLevel(totalScore) {
-    if (totalScore <= 15){
+    if (totalScore <= 15) {
         risk = "lowRisk";
     }
-        
-    if (totalScore > 15 && totalScore <= 25){
+    if (totalScore > 15 && totalScore <= 25) {
         risk = "mediumRisk";
     }
-    if (totalScore > 25){
+    if (totalScore > 25) {
         risk = "highRisk";
     }
     return risk;
-}
-function changeMessageBoardBGcolorto(riskLevel){
-    if (riskLevel==="lowRisk") {
-        document.getElementById("messegeBoard").style.backgroundColor = '#FFF09F';
-    }
-    if (riskLevel==="mediumRisk") {
-        document.getElementById("messegeBoard").style.backgroundColor = '#FFB24A';
-    }
-     if (riskLevel==="highRisk") {
-        document.getElementById("messegeBoard").style.backgroundColor = '#FF3C1D';
-    }
-    
-}
-
-function clearMessege() {
-    var x = document.getElementById("messegeBoard");
-    while (x.hasChildNodes()) {
-        x.removeChild(x.firstChild);
-    }
 }
 
 function createHeadingMessage() {
@@ -99,29 +79,29 @@ function displayMessage(riskLevel) {
     var messeges = {
         lowRisk: "Your results show that you currently have a low risk of developing diabetes. However, it is important that youmaintain a healthy lifestyle in terms of diet and exercise.",
         mediumRisk: "Your results show that you currently have a medium risk of developing diabetes. For more information on your risk factors, and what to do about them, please visit our diabetes advice website at ",
-        highRisk: "Your results show that you currently have a HIGH risk of developing diabetes." +createMainRiskFactorMessage()+"We advise that you contact the Health Authority to discuss your risk factors as soon as you can.Please fill in our ",
+        highRisk: "Your results show that you currently have a HIGH risk of developing diabetes." + createMainRiskFactorMessage() + "We advise that you contact the Health Authority to discuss your risk factors as soon as you can.Please fill in our ",
         extraInfo: " and a member of the Health Autorithy Diabetes team will be in contact with you."
     }
 
     var messege = document.createElement("p");
     var contactFormLink = document.createElement("a");
     var extraInfoText = document.createElement("p");
-    if (riskLevel === "lowRisk") { 
-        messegeText = document.createTextNode(messeges.lowRisk); 
-        changeMessageBoardBGcolorto("lowRisk");
+    if (riskLevel === "lowRisk") {
+        messegeText = document.createTextNode(messeges.lowRisk);
+        matchMessageBoardColorTo("lowRisk");
     }
     if (riskLevel === "mediumRisk") {
         messegeText = document.createTextNode(messeges.mediumRisk);
         contactFormLink.href = "http://www.zha.org.zd.";
         contactFormLink.innerHTML = "http://www.zha.org.zd.";
-         changeMessageBoardBGcolorto("mediumRisk");
+        matchMessageBoardColorTo("mediumRisk");
     }
     if (riskLevel === "highRisk") {
         messegeText = document.createTextNode(messeges.highRisk);
         extraInfoText = document.createTextNode(messeges.extraInfo);
         contactFormLink.href = "ContactForm.html";
         contactFormLink.innerHTML = "Contact form";
-        changeMessageBoardBGcolorto("highRisk");
+        matchMessageBoardColorTo("highRisk");
 
     }
 
@@ -133,5 +113,24 @@ function displayMessage(riskLevel) {
     document.getElementById("messegeBoard").appendChild(messege);
     document.getElementById("messegeBoard").style.display = "inline";
 
+}
+
+function matchMessageBoardColorTo(riskLevel) {
+    if (riskLevel === "lowRisk") {
+        document.getElementById("messegeBoard").style.backgroundColor = '#FFF09F';
+    }
+    if (riskLevel === "mediumRisk") {
+        document.getElementById("messegeBoard").style.backgroundColor = '#FFB24A';
+    }
+    if (riskLevel === "highRisk") {
+        document.getElementById("messegeBoard").style.backgroundColor = '#FF3C1D';
+    }
+
+}
+function clearMessege() {
+    var x = document.getElementById("messegeBoard");
+    while (x.hasChildNodes()) {
+        x.removeChild(x.firstChild);
+    }
 }
 window.onload = init;
