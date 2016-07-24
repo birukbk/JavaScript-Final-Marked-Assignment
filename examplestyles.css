@@ -18,13 +18,16 @@ font-style: italic;
 }
 
 #controls {
-width:60%;
+width:90%;
 padding: 1em;
+align-self: center;
+background-color: #FFF09F;
 }
 #messegeBoard {
-width:60%;
+width:90%;
 padding: 1em;
 display: none;
+background-color: #FFD700;
 }
 .question{
 	display:inline-block;
@@ -32,8 +35,15 @@ display: none;
 	text-align: right;
 	width:180px;
 }
-.choice{
+.answer{
 	display:inline-block;
-	text-align: left;
+	padding-right: 70px;
+	text-align: right;
+	width:160px;
 	
 }
+
+
+
+
+
