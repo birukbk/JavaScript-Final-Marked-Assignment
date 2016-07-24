@@ -42,15 +42,29 @@ function getTotalScore(inputElement) {
 }
 
 function determineRiskLevel(totalScore) {
-    if (totalScore <= 15)
+    if (totalScore <= 15){
         risk = "lowRisk";
-    if (totalScore > 15 && totalScore <= 25)
+    }
+        
+    if (totalScore > 15 && totalScore <= 25){
         risk = "mediumRisk";
+    }
     if (totalScore > 25){
         risk = "highRisk";
-         //document.getElementById("messegeBoard").style.backgroundColor = '#FF3C1D';
     }
     return risk;
+}
+function changeMessageBoardBGcolorto(riskLevel){
+    if (riskLevel==="lowRisk") {
+        document.getElementById("messegeBoard").style.backgroundColor = '#FFF09F';
+    }
+    if (riskLevel==="mediumRisk") {
+        document.getElementById("messegeBoard").style.backgroundColor = '#FFB24A';
+    }
+     if (riskLevel==="highRisk") {
+        document.getElementById("messegeBoard").style.backgroundColor = '#FF3C1D';
+    }
+    
 }
 
 function clearMessege() {
@@ -92,17 +106,22 @@ function displayMessage(riskLevel) {
     var messege = document.createElement("p");
     var contactFormLink = document.createElement("a");
     var extraInfoText = document.createElement("p");
-    if (riskLevel === "lowRisk") { messegeText = document.createTextNode(messeges.lowRisk); }
+    if (riskLevel === "lowRisk") { 
+        messegeText = document.createTextNode(messeges.lowRisk); 
+        changeMessageBoardBGcolorto("lowRisk");
+    }
     if (riskLevel === "mediumRisk") {
         messegeText = document.createTextNode(messeges.mediumRisk);
         contactFormLink.href = "http://www.zha.org.zd.";
         contactFormLink.innerHTML = "http://www.zha.org.zd.";
+         changeMessageBoardBGcolorto("mediumRisk");
     }
     if (riskLevel === "highRisk") {
         messegeText = document.createTextNode(messeges.highRisk);
         extraInfoText = document.createTextNode(messeges.extraInfo);
         contactFormLink.href = "ContactForm.html";
         contactFormLink.innerHTML = "Contact form";
+        changeMessageBoardBGcolorto("highRisk");
 
     }
 
@@ -113,6 +132,6 @@ function displayMessage(riskLevel) {
     createHeadingMessage();
     document.getElementById("messegeBoard").appendChild(messege);
     document.getElementById("messegeBoard").style.display = "inline";
-    
+
 }
 window.onload = init;
