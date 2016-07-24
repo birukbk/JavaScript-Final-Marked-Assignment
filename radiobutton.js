@@ -46,8 +46,10 @@ function determineRiskLevel(totalScore) {
         risk = "lowRisk";
     if (totalScore > 15 && totalScore <= 25)
         risk = "mediumRisk";
-    if (totalScore > 25)
+    if (totalScore > 25){
         risk = "highRisk";
+         //document.getElementById("messegeBoard").style.backgroundColor = '#FF3C1D';
+    }
     return risk;
 }
 
@@ -83,7 +85,7 @@ function displayMessage(riskLevel) {
     var messeges = {
         lowRisk: "Your results show that you currently have a low risk of developing diabetes. However, it is important that youmaintain a healthy lifestyle in terms of diet and exercise.",
         mediumRisk: "Your results show that you currently have a medium risk of developing diabetes. For more information on your risk factors, and what to do about them, please visit our diabetes advice website at ",
-        highRisk: "Your results show that you currently have a HIGH risk of developing diabetes." + createMainRiskFactorMessage(),
+        highRisk: "Your results show that you currently have a HIGH risk of developing diabetes." +createMainRiskFactorMessage()+"We advise that you contact the Health Authority to discuss your risk factors as soon as you can.Please fill in our ",
         extraInfo: " and a member of the Health Autorithy Diabetes team will be in contact with you."
     }
 
@@ -101,6 +103,7 @@ function displayMessage(riskLevel) {
         extraInfoText = document.createTextNode(messeges.extraInfo);
         contactFormLink.href = "ContactForm.html";
         contactFormLink.innerHTML = "Contact form";
+
     }
 
     messege.appendChild(messegeText);
@@ -110,5 +113,6 @@ function displayMessage(riskLevel) {
     createHeadingMessage();
     document.getElementById("messegeBoard").appendChild(messege);
     document.getElementById("messegeBoard").style.display = "inline";
+    
 }
 window.onload = init;
