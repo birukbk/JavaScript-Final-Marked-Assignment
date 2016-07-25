@@ -10,44 +10,46 @@
 
 <body>
     <h1 id="pageheading">Zedland Health Authority contact form</h1>
-    <form id="contactForm">
+    <form id="contactForm"  method="GET">
         <fieldset id="controls">
-            <div class="title">
+            <div class="fristName">
+                <div class="question">
+                    First Name:
+                </div>
+                <input id="firstName" type="text" size="30"><span id="firstNameError">*You must enter a first name</span>
+                <div class="lastName">
+                    <div class="question">
+                        Last Name:
+                    </div>
+                    <input id="lastName" type="text" size="30"><span id="errName" class="error">* You must enter a last name</span>
+                </div>
+                <div class="title">
                 <div class="question">
                     Title:
                 </div>
                 <select id="title">
-                    <option value="Mr." selected="selected"></option>
+                    <option selected="selected"></option>
                     <option value="Mr.">Mr.</option>
                     <option value="Ms.">Ms.</option>
                     <option value="Mrs.">Mrs.</option>
                     <option value="Miss">Miss</option>
                     <option value="Master.">Master.</option>
-                </select>
+                </select><span id="errName" class="error">* You must select a title</span>
             </div>
-            <div class="fristName">
-                <div class="question">
-                    First Name:
-                </div>
-                <input id="fristName" type="text" size="30">
-                <div class="lastName">
-                    <div class="question">
-                        Last Name:
-                    </div>
-                    <input id="lastName" type="text" size="30">
-                </div>
                 <div class="healthAutorityNumber">
                     <div class="question">
                         Health Authority Number:
                     </div>
-                    <input id="healthAuthorityNumber" type="text" size="30">
+                    <input id="healthAuthorityNumber" type="text" size="30"><span id="errName" class="error">* You must enter a health autority number</span>
                 </div>
+
                 <div class="email">
                     <div class="question">
                         Email:
                     </div>
-                    <input id="email" type="text" size="30">
+                    <input id="email" type="text" size="30"><span id="errName" class="error">* You must enter email address</span>
                 </div>
+
                 <div class="telephoneNumber">
                     <div class="question">
                         Telephone Number:
@@ -58,7 +60,9 @@
                     <input type="submit" value="submit">
                 </div>
         </fieldset>
+
     </form>
+
 </body>
 
 </html>

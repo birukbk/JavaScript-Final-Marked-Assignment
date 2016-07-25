@@ -46,6 +46,17 @@ background-color: #FFD700;
 	
 }
 
+.error{
+  display:none;
+  color:red;
+  padding-left: 1em;
+}
+#firstNameError{
+ display:none;
+ color:red;
+ padding-left: 1em;
+}
+
 
 
 
