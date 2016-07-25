@@ -56,7 +56,7 @@ background-color: #FFD700;
   padding-left: 1em;
   font-size: 70%;
 }
-#firstNameError,#lastNameError,#emailError,#healthAuthorityNumberError{
+#firstNameError,#lastNameError,#emailError,#hanError{
  display:none;
 }
 

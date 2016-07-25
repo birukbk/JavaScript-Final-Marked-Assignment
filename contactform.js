@@ -10,17 +10,10 @@ function checkForm() {
 	document.getElementById("contactForm").onsubmit=function(){
 		var allowsubmit = false;
 		if (checkMandatoryFields()) {
-			validate("firstName","lastName");
+			validate("firstName","lastName","han","email");
+
 
 		}
-		//checkMandatoryFields();
-		
-			
-
-		
-	
-		//checkMandatoryFields();
-		//console.log(validate("firstName","lastName"));
 		console.log(checkMandatoryFields());
 		
 		
@@ -29,16 +22,23 @@ function checkForm() {
  };
 }
 
-function validate(firstName,lastName){
+function validate(firstName,lastName,han,email){
 	var allowsubmit=true;
 	var firstName=document.getElementById(firstName).value;
 	var lastName=document.getElementById(lastName).value;
+	var han =document.getElementById(han).value;
+	var email = document.getElementById(email).value;
 	var firstNameRegex = /^[A-Za-z]+$/.test(firstName);
-	//var lastNameRegex = 
+	var lastNameRegex = /^[A-Za-z\-]+$/.test(lastName);
+	var hanRegex = /^[ZHA{3}\d{6}]+$/.test(han);
+	var emailRegex = /^[\w\.\-]+@([\w\-]+\.)+[a-zA-Z]+$/.test(email);
+
 
 	var messeges = {
-        firstNameValidationError: "First name can't contain numbers or other non-allowed alphabetic characters.Only hyphen(e.g Whittaker-Jones)",
-        lastNameValidationError:"Error message for lastName"}
+        firstNameValidationError: "First name can't contain numbers or other non-allowed alphabetic characters.",
+        lastNameValidationError:"Last name can't contain numbers or other non-allowed alphabetic characters.Only hyphen(e.g Whittaker-Jones)",
+        hanValidationError:"Invalid number it should be in the form of (e.g ZHA346783)",
+        emailValidationError:"Invalid Email"}
 
 	if (!firstNameRegex) {
 			document.getElementById("firstNameValidationError").innerHTML = messeges.firstNameValidationError;
@@ -47,8 +47,19 @@ function validate(firstName,lastName){
 		else document.getElementById("firstNameValidationError").innerHTML = '';
 	if (!lastNameRegex ) {
 			document.getElementById("lastNameValidationError").innerHTML = messeges.lastNameValidationError;
+			allowsubmit = false;
 		}
 		else document.getElementById("lastNameValidationError").innerHTML = '';
+	if (!hanRegex) {
+			document.getElementById("hanValidationError").innerHTML = messeges.hanValidationError;
+			allowsubmit=false;
+		}
+		else document.getElementById("hanValidationError").innerHTML = '';
+	if (!emailRegex) {
+			document.getElementById("emailValidationError").innerHTML = messeges.emailValidationError;
+			allowsubmit=false;
+		}
+		else document.getElementById("emailValidationError").innerHTML = '';
 
 		return allowsubmit;
 
@@ -77,12 +88,12 @@ function validate(firstName,lastName){
             allowsubmit = false;
          }
           else clearError("title");
-          if( document.getElementById("healthAuthorityNumber").value===""||document.getElementById("healthAuthorityNumber").value==="e.g. ZHA346783")
+          if( document.getElementById("han").value===""||document.getElementById("han").value==="e.g. ZHA346783")
          {
-             errorCollection.push("healthAuthorityNumber");
+             errorCollection.push("han");
             allowsubmit = false;
          }
-         else clearError("healthAuthorityNumber");
+         else clearError("han");
 
          if( document.getElementById("email").value===""||document.getElementById("email").value==="Enter your email")
          {
@@ -124,7 +135,7 @@ function textHint(txtElem, defaultText) {
 function setHintForAllFields(){
 	textHint(document.getElementById("firstName"), "Enter your first name");
 	textHint(document.getElementById("lastName"), "Enter your last name");
-	textHint(document.getElementById("healthAuthorityNumber"), "e.g. ZHA346783");
+	textHint(document.getElementById("han"), "e.g. ZHA346783");
 	textHint(document.getElementById("email"), "Enter your email");
 	textHint(document.getElementById("telephoneNumber"), "Enter your telephone number");
 }
