@@ -16,42 +16,55 @@ function checkForm() {
   } else {
     return true;
   }*/
-  return false;
+  return checkMandatoryFields();
   
  };
 }
-
-/*function checkMandatoryFields(firstName){
-	if(document.getElementById(firstName).value===""||document.getElementById(firstName).value==="Enter your first name"){
-  showError("firstName");
-    return false;
-  } 
-  else {
-    return true;
-  }
-
-
-}*/
-
-function checkMandatoryFields()
+      function checkMandatoryFields()
       {
       	var allowsubmit = true;
+      	var errorCollection=[];
       
          if( document.getElementById("firstName").value===""||document.getElementById("firstName").value==="Enter your first name")
          {
-
-            showError("firstName");	
+         	errorCollection.push("firstName");
             allowsubmit = false;
-            return allowsubmit;
          }
-         else clearError("firstName");
+          else clearError("firstName");
+         
          if( document.getElementById("lastName").value===""||document.getElementById("lastName").value==="Enter your last name")
          {
-            showError("lastName");
+            errorCollection.push("lastName");
             allowsubmit = false;
-            return allowsubmit;
          }
-          else clearError("lastName");
+         else clearError("lastName");
+          if( document.getElementById("title").value==="select a title")
+         {
+            errorCollection.push("title");
+            allowsubmit = false;
+         }
+          else clearError("title");
+          if( document.getElementById("healthAuthorityNumber").value===""||document.getElementById("healthAuthorityNumber").value==="e.g. ZHA346783")
+         {
+             errorCollection.push("healthAuthorityNumber");
+            allowsubmit = false;
+         }
+         else clearError("healthAuthorityNumber");
+
+         if( document.getElementById("email").value===""||document.getElementById("email").value==="Enter your email")
+         {
+             errorCollection.push("email");
+            allowsubmit = false;
+           
+         }
+          else clearError("email");
+          if(!allowsubmit){
+          	for (var i = 0; i < errorCollection.length; i++) {
+          	showError(errorCollection[i]);
+          }
+
+          }
+          
          return( allowsubmit );
       }
 function textHint(txtElem, defaultText) {

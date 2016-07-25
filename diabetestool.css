@@ -51,15 +51,10 @@ background-color: #FFD700;
   color:red;
   padding-left: 1em;
 }
-#firstNameError{
+#firstNameError,#lastNameError,#emailError,#healthAuthorityNumberError{
  display:none;
 }
-#lastNameError{
- display:none;
-}
-#emailError{
- display:none;
-}
+
 
 
 
