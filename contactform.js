@@ -2,23 +2,56 @@ function init() {
     checkForm();
     setHintForAllFields();
     setFocus();
+
     
 }
 
 function checkForm() {
 	document.getElementById("contactForm").onsubmit=function(){
-		checkMandatoryFields();
-		//checkMandatoryFields("firstName");
- /* if(document.getElementById("firstName").value===""||document.getElementById("firstName").value==="Enter your first name"){
-  //if(getElementsValue("firstName")===""||getElementsValue("firstName")==="Enter your first name"){
-  showError("firstName");
-    return false;
-  } else {
-    return true;
-  }*/
-  return checkMandatoryFields();
+		var allowsubmit = false;
+		if (checkMandatoryFields()) {
+			validate("firstName","lastName");
+
+		}
+		//checkMandatoryFields();
+		
+			
+
+		
+	
+		//checkMandatoryFields();
+		//console.log(validate("firstName","lastName"));
+		console.log(checkMandatoryFields());
+		
+		
+  return allowsubmit;
   
  };
+}
+
+function validate(firstName,lastName){
+	var allowsubmit=true;
+	var firstName=document.getElementById(firstName).value;
+	var lastName=document.getElementById(lastName).value;
+	var firstNameRegex = /^[A-Za-z]+$/.test(firstName);
+	//var lastNameRegex = 
+
+	var messeges = {
+        firstNameValidationError: "First name can't contain numbers or other non-allowed alphabetic characters.Only hyphen(e.g Whittaker-Jones)",
+        lastNameValidationError:"Error message for lastName"}
+
+	if (!firstNameRegex) {
+			document.getElementById("firstNameValidationError").innerHTML = messeges.firstNameValidationError;
+			allowsubmit=false;
+		}
+		else document.getElementById("firstNameValidationError").innerHTML = '';
+	if (!lastNameRegex ) {
+			document.getElementById("lastNameValidationError").innerHTML = messeges.lastNameValidationError;
+		}
+		else document.getElementById("lastNameValidationError").innerHTML = '';
+
+		return allowsubmit;
+
 }
       function checkMandatoryFields()
       {

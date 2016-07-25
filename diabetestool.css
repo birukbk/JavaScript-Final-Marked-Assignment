@@ -51,6 +51,11 @@ background-color: #FFD700;
   color:red;
   padding-left: 1em;
 }
+.validationError{
+  color:red;
+  padding-left: 1em;
+  font-size: 70%;
+}
 #firstNameError,#lastNameError,#emailError,#healthAuthorityNumberError{
  display:none;
 }
