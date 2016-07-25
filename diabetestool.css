@@ -30,11 +30,14 @@ display: none;
 background-color: #FFD700;
 }
 .question{
+	margin-top: 10px;
 	display:inline-block;
+	padding:4px;
 	padding-right: 70px;
 	text-align: right;
 	width:180px;
 }
+
 .answer{
 	display:inline-block;
 	padding-right: 70px;
