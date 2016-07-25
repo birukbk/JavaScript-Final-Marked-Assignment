@@ -2,21 +2,58 @@ function init() {
     checkForm();
     setHintForAllFields();
     setFocus();
+    
 }
 
 function checkForm() {
 	document.getElementById("contactForm").onsubmit=function(){
-  if(document.getElementById("firstName").value===""||document.getElementById("firstName").value==="Enter your first name"){
+		checkMandatoryFields();
+		//checkMandatoryFields("firstName");
+ /* if(document.getElementById("firstName").value===""||document.getElementById("firstName").value==="Enter your first name"){
   //if(getElementsValue("firstName")===""||getElementsValue("firstName")==="Enter your first name"){
   showError("firstName");
     return false;
   } else {
     return true;
-  }
-  //return false;
+  }*/
+  return false;
   
  };
 }
+
+/*function checkMandatoryFields(firstName){
+	if(document.getElementById(firstName).value===""||document.getElementById(firstName).value==="Enter your first name"){
+  showError("firstName");
+    return false;
+  } 
+  else {
+    return true;
+  }
+
+
+}*/
+
+function checkMandatoryFields()
+      {
+      	var allowsubmit = true;
+      
+         if( document.getElementById("firstName").value===""||document.getElementById("firstName").value==="Enter your first name")
+         {
+
+            showError("firstName");	
+            allowsubmit = false;
+            return allowsubmit;
+         }
+         else clearError("firstName");
+         if( document.getElementById("lastName").value===""||document.getElementById("lastName").value==="Enter your last name")
+         {
+            showError("lastName");
+            allowsubmit = false;
+            return allowsubmit;
+         }
+          else clearError("lastName");
+         return( allowsubmit );
+      }
 function textHint(txtElem, defaultText) {
     //var defaultText;
     //var txtElem;
@@ -55,6 +92,10 @@ function getElementsValue(element){
 function showError(errorId){
 	var er=errorId+"Error";
 	document.getElementById(er).style.display="inline";
+}
+function clearError(errorId){
+	var er=errorId+"Error";
+	document.getElementById(er).style.display="none";
 }
 window.onload = init;
 //window.onload=checkForm;
