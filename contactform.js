@@ -10,10 +10,17 @@ function checkForm() {
 	document.getElementById("contactForm").onsubmit=function(){
 		var allowsubmit = false;
 		if (checkMandatoryFields()) {
-			validate("firstName","lastName","han","email");
-
+			validate("firstName","lastName","han","email","telephoneNumber");
 
 		}
+		//checkMandatoryFields();
+		
+			
+
+		
+	
+		//checkMandatoryFields();
+		//console.log(validate("firstName","lastName"));
 		console.log(checkMandatoryFields());
 		
 		
@@ -22,23 +29,26 @@ function checkForm() {
  };
 }
 
-function validate(firstName,lastName,han,email){
+function validate(firstName,lastName,han,email,telephoneNumber){
 	var allowsubmit=true;
 	var firstName=document.getElementById(firstName).value;
 	var lastName=document.getElementById(lastName).value;
 	var han =document.getElementById(han).value;
 	var email = document.getElementById(email).value;
+	var telephoneNumber = document.getElementById(telephoneNumber).value;
 	var firstNameRegex = /^[A-Za-z]+$/.test(firstName);
 	var lastNameRegex = /^[A-Za-z\-]+$/.test(lastName);
 	var hanRegex = /^[ZHA{3}\d{6}]+$/.test(han);
 	var emailRegex = /^[\w\.\-]+@([\w\-]+\.)+[a-zA-Z]+$/.test(email);
+	var telephoneNumberRegex = /0\d{10}$/.test(telephoneNumber);
 
 
 	var messeges = {
         firstNameValidationError: "First name can't contain numbers or other non-allowed alphabetic characters.",
         lastNameValidationError:"Last name can't contain numbers or other non-allowed alphabetic characters.Only hyphen(e.g Whittaker-Jones)",
         hanValidationError:"Invalid number it should be in the form of (e.g ZHA346783)",
-        emailValidationError:"Invalid Email"}
+        emailValidationError:"Invalid Email",
+        telephoneNumberValidationError:"Invalid Telephone number.must be 11 digits starting with 0"}
 
 	if (!firstNameRegex) {
 			document.getElementById("firstNameValidationError").innerHTML = messeges.firstNameValidationError;
@@ -60,6 +70,11 @@ function validate(firstName,lastName,han,email){
 			allowsubmit=false;
 		}
 		else document.getElementById("emailValidationError").innerHTML = '';
+	if (!telephoneNumberRegex) {
+			document.getElementById("telephoneNumberValidationError").innerHTML = messeges.telephoneNumberValidationError;
+			allowsubmit=false;
+		}
+		else document.getElementById("telephoneNumberValidationError").innerHTML = '';
 
 		return allowsubmit;
 
@@ -102,6 +117,14 @@ function validate(firstName,lastName,han,email){
            
          }
           else clearError("email");
+
+          /*if( document.getElementById("telephoneNumber").value===""||document.getElementById("telephoneNumber").value==="Enter your telephone number")
+         {
+             errorCollection.push("telephoneNumber");
+            allowsubmit = false;
+           
+         }
+          else clearError("telephoneNumber");*/
           if(!allowsubmit){
           	for (var i = 0; i < errorCollection.length; i++) {
           	showError(errorCollection[i]);
