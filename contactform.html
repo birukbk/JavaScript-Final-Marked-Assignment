@@ -2,17 +2,18 @@
 <html>
 <head>
    <meta charset="utf-8">
-   <title>JavaScript - JQuery </title>
-   <link rel="stylesheet" type="text/css" href="contactform.css">
+   <title>Zedland Health Authority contact form</title>
+   <link rel="stylesheet" type="text/css" href="diabetestool.css">
    <script src="contactform.js"></script>
 </head>
 <body>
-   <h1 id="pageheading">JavaScript - JQuery</h1>
-   <h2 class="sectionheading">JavaScript, JQuery and Forms</h2>
-   <form id="register">
+   <h1 id="pageheading">Zedland Health Authority contact form</h1>
+   <form id="contactForm">
    <fieldset id="controls">
    <div class="title">
+   <div class="question">
 	  Title:
+   </div>
 	  <select id="title">
         <option value="Mr.">Mr.</option>
         <option value="Ms.">Ms.</option>
@@ -22,24 +23,34 @@
      </select>
 	</div>
 	<div class="fristName">
+	<div class="question">
       First Name:
+      </div>
       <input id="fristName" type="text" size="30">
-	</div>
+	
 	<div class="lastName">
+	<div class="question">
 	 Last Name:
+	    </div>
       <input id="lastName" type="text" size="30">
 	</div>
 	<div class="healthAutorityNumber">
+	<div class="question">
       Health Authority Number:
-      <input id="healthAuthorityNumber" type="text" size="10">
+         </div>
+      <input id="healthAuthorityNumber" type="text" size="30">
 	</div>
 	<div class="email">
+	<div class="question">
      Email: 
-      <input id="email" type="text" size="40">
+        </div>
+      <input id="email" type="text" size="30">
 	</div>
 	<div class="telephoneNumber">
+	<div class="question">
      Telephone Number:
-      <input id="telephoneNumber" type="text" size="13">
+        </div>
+      <input id="telephoneNumber" type="text" size="30">
 	</div>
 	<div>
       <input type="submit" value="submit">
