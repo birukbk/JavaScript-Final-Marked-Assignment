@@ -1,0 +1,41 @@
+body {
+font-family: Verdana, Arial, sans-serif;
+}
+
+.sectionheading {
+color: #ff0000;
+}
+
+#pageheading{
+font-style: italic; 
+}
+#controls {
+width:90%;
+padding: 1em;
+align-self: center;
+background-color: #FFF09F;
+}
+.question{
+	margin-top: 10px;
+	display:inline-block;
+	padding:4px;
+	padding-right: 70px;
+	text-align: right;
+	width:180px;
+}
+.txtlabel {
+float:left;
+width:10%;
+text-align:right;
+}
+
+fieldset{
+padding: 1em;
+}
+
+label.error {
+color: #ff0000;
+font-size:0.75em;
+font-style:italic;
+margin-left: 1em;
+}
