@@ -11,16 +11,7 @@ function checkForm() {
 		var allowsubmit = false;
 		if (checkMandatoryFields()) {
 			validate("firstName","lastName","han","email","telephoneNumber");
-
 		}
-		//checkMandatoryFields();
-		
-			
-
-		
-	
-		//checkMandatoryFields();
-		//console.log(validate("firstName","lastName"));
 		console.log(checkMandatoryFields());
 		
 		
@@ -38,9 +29,9 @@ function validate(firstName,lastName,han,email,telephoneNumber){
 	var telephoneNumber = document.getElementById(telephoneNumber).value;
 	var firstNameRegex = /^[A-Za-z]+$/.test(firstName);
 	var lastNameRegex = /^[A-Za-z\-]+$/.test(lastName);
-	var hanRegex = /^[ZHA{3}\d{6}]+$/.test(han);
+	var hanRegex = /ZHA\d{6}/.test(han);
 	var emailRegex = /^[\w\.\-]+@([\w\-]+\.)+[a-zA-Z]+$/.test(email);
-	var telephoneNumberRegex = /0\d{10}$/.test(telephoneNumber);
+	var telephoneNumberRegex = /0\d{10}$| /.test(telephoneNumber);
 
 
 	var messeges = {
@@ -160,7 +151,7 @@ function setHintForAllFields(){
 	textHint(document.getElementById("lastName"), "Enter your last name");
 	textHint(document.getElementById("han"), "e.g. ZHA346783");
 	textHint(document.getElementById("email"), "Enter your email");
-	textHint(document.getElementById("telephoneNumber"), "Enter your telephone number");
+	textHint(document.getElementById("telephoneNumber"), "Enter your telephone number(optional)");
 }
 function setFocus(){
 	document.getElementById("firstName").focus();
