@@ -28,7 +28,7 @@ function validate(firstName,lastName,han,email,telephoneNumber){
 	var email = document.getElementById(email).value;
 	var telephoneNumber = document.getElementById(telephoneNumber).value;
 	var firstNameRegex = /^[A-Za-z]{2,}$/.test(firstName);
-	var lastNameRegex = /^[A-Za-z\-]+$/.test(lastName);
+	var lastNameRegex = /^[A-Za-z\-]{2,}$/.test(lastName);
 	var hanRegex = /ZHA\d{6}/.test(han);
 	var emailRegex = /^[\w\.\-]+@([\w\-]+\.)+[a-zA-Z]+$/.test(email);
 	var telephoneNumberRegex = /0\d{10}$| /.test(telephoneNumber);
@@ -37,7 +37,7 @@ function validate(firstName,lastName,han,email,telephoneNumber){
 	var messeges = {
         firstNameValidationError: "First name can't contain numbers or other non-allowed alphabetic characters.And must contain more than one character.",
         firstNameValidationErrorMinimumLength:"first name must contain more than one character.",
-        lastNameValidationError:"Last name can't contain numbers or other non-allowed alphabetic characters.Only hyphen(e.g Whittaker-Jones)",
+        lastNameValidationError:"Last name can't contain numbers or other non-allowed alphabetic characters.Only hyphen(e.g Whittaker-Jones).And must contain more than one character.",
         hanValidationError:"Invalid number it should be in the form of (e.g ZHA346783)",
         emailValidationError:"Invalid Email",
         telephoneNumberValidationError:"Invalid Telephone number.must be 11 digits starting with 0"}
