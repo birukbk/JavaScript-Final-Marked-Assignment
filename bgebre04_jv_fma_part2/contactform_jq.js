@@ -1,5 +1,6 @@
 $(document).ready (function (){
   $("#firstName").focus();
+  switchToolTip();
   $('#contactForm').validate({
   rules: {
   firstName: {
@@ -56,3 +57,10 @@ $.validator.addMethod("validTelephoneNumber",
   },
   "* You must enter a valid telephone number"
   );
+function switchToolTip() { 
+$('#qmark').mouseover(function() {
+  $('#ttip').show();
+}).mouseout(function(){
+  $('#ttip').hide();
+});
+}
