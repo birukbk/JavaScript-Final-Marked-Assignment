@@ -42,8 +42,7 @@ background-color: #FFD700;
 	display:inline-block;
 	padding-right: 70px;
 	text-align: right;
-	width:160px;
-	
+	width:160px;	
 }
 
 .error{
@@ -59,6 +58,19 @@ background-color: #FFD700;
 #firstNameError,#lastNameError,#emailError,#hanError,#telephoneNumberError{
  display:none;
 }
+.tooltip {
+		position:absolute;
+	left:220px; 
+	top:210px;
+	display:none;
+	width:125px;
+	border:1px solid red;
+	background:#FFD700 top left no-repeat;
+	color: balck;
+	padding: 5px 3px 5px 5px;
+	font:0.65em Arial, Helvetica, sans-serif;
+}
+
 
 
 

@@ -2,6 +2,7 @@ function init() {
     checkForm();
     setHintForAllFields();
     setFocus();
+    switchToolTip();
 
     
 }
@@ -12,6 +13,7 @@ function checkForm() {
 		if (checkMandatoryFields()) {
 			validate("firstName","lastName","han","email","telephoneNumber");
 		}
+    
 		//console.log(checkMandatoryFields());
 		
 		
@@ -159,6 +161,16 @@ function showError(errorId){
 function clearError(errorId){
 	var er=errorId+"Error";
 	document.getElementById(er).style.display="none";
+}
+function switchToolTip() {           
+  document.getElementById('qmark').onmouseover = function() {
+  var toolTip = document.getElementById('ttip');
+  toolTip.style.display='block';
+  }       
+  document.getElementById('qmark').onmouseout = function() {
+  var toolTip = document.getElementById('ttip');
+  toolTip.style.display='none';
+  }   
 }
 window.onload = init;
 //window.onload=checkForm;
