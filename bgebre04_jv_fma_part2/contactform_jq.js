@@ -1,4 +1,5 @@
 $(document).ready (function (){
+  $("#firstName").focus();
   $('#contactForm').validate({
   rules: {
   firstName: {
@@ -42,6 +43,7 @@ $(document).ready (function (){
   }
   });
 });
+
 $.validator.addMethod("validHAN",
   function (value){
     return /ZHA\d{6}/.test(value);
