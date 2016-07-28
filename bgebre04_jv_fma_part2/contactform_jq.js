@@ -10,11 +10,17 @@ $(document).ready (function (){
     minlength:2
   },
   title:'required',
-  han:'required',
   email: {
     required: true,
     email: true
-         }
+         },
+    han:{
+      required:true,
+      validHAN:true
+    },
+    telephoneNumber:{
+      validTelephoneNumber:true
+    }
        },
   messages:
   {
@@ -23,7 +29,7 @@ $(document).ready (function (){
       minlength:"your first name must consist of atleast two characters."
     },
     lastName:{
-      required:"*last name is required. Please enter your first name",
+      required:"*last name is required. Please enter your last name",
       minlength:"your last name must consist of atleast two characters."
     },
     title:{
@@ -34,8 +40,17 @@ $(document).ready (function (){
       required:"email is required, please enter your email"
     }
   }
-
-
-
   });
 });
+$.validator.addMethod("validHAN",
+  function (value){
+    return /ZHA\d{6}/.test(value);
+  },
+  "* You must enter a valid health authority number. (e.g ZHA346783)"
+  );
+$.validator.addMethod("validTelephoneNumber",
+  function (telephoneNumber,element){
+    return this.optional(element) || /0\d{10}$| /.test(telephoneNumber);
+  },
+  "* You must enter a valid telephone number"
+  );
