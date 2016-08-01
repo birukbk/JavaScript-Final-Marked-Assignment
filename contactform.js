@@ -141,11 +141,11 @@ function textHint(txtElem, defaultText) {
     }
 }
 function setHintForAllFields(){
-	textHint(document.getElementById("firstName"), "Enter your first name");
-	textHint(document.getElementById("lastName"), "Enter your last name");
+	textHint(document.getElementById("firstName"), "Enter first name");
+	textHint(document.getElementById("lastName"), "Enter last name");
 	textHint(document.getElementById("han"), "e.g. ZHA346783");
 	textHint(document.getElementById("email"), "Enter your email");
-	textHint(document.getElementById("telephoneNumber"), "Enter your telephone number(optional)");
+	textHint(document.getElementById("telephoneNumber"), "Enter telephone number(optional)");
 }
 function setFocus(){
 	document.getElementById("firstName").focus();

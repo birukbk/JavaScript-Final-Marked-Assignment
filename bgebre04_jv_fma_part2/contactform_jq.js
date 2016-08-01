@@ -1,7 +1,8 @@
 $(document).ready (function (){
   $("#firstName").focus();
   switchToolTip();
-  addDeafultText('#lastName','Enter your last name');
+  addDeafultText('#lastName','Enter last name');
+  addDeafultText('#healthAutorityNumber','e.g. ZHA346783');
   $('#contactForm').validate({
   rules: {
   firstName: {
@@ -28,11 +29,11 @@ $(document).ready (function (){
   messages:
   {
     firstName:{
-      required:"*first name is required. Please enter your first name",
+      required:"*first name is required. Please enter first name",
       minlength:"your first name must consist of atleast two characters."
     },
     lastName:{
-      required:"*last name is required. Please enter your last name",
+      required:"*last name is required. Please enter last name",
       minlength:"your last name must consist of atleast two characters."
     },
     title:{
@@ -40,7 +41,7 @@ $(document).ready (function (){
       
     },
     email:{
-      required:"email is required, please enter your email"
+      required:"email is required, please enter email"
     }
   }
   });
@@ -67,12 +68,10 @@ $('#qmark').mouseover(function() {
 }
 function addDeafultText(inputname,text){
     $(inputname).attr("placeholder", text);
-    $(inputname).data('holder', $(inputname).attr('placeholder'));
     $(inputname).focusin(function () {
         $(this).attr('placeholder', '');
     });
     $(inputname).focusout(function () {
-        $(this).attr('placeholder', $(this).data('holder'));
         $(this).attr("placeholder", text);
     });
 }
