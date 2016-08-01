@@ -1,6 +1,6 @@
 function init() {
     checkForm();
-    setHintForAllFields();
+    setDefaultTextForAllInputs();
     setFocus();
     switchToolTip();
 
@@ -140,12 +140,12 @@ function textHint(txtElem, defaultText) {
         }
     }
 }
-function setHintForAllFields(){
+function setDefaultTextForAllInputs(){
 	textHint(document.getElementById("firstName"), "Enter first name");
 	textHint(document.getElementById("lastName"), "Enter last name");
 	textHint(document.getElementById("han"), "e.g. ZHA346783");
-	textHint(document.getElementById("email"), "Enter your email");
-	textHint(document.getElementById("telephoneNumber"), "Enter telephone number(optional)");
+	textHint(document.getElementById("email"), "Enter email");
+	textHint(document.getElementById("telephoneNumber"), "Enter telephone number (optional)");
 }
 function setFocus(){
 	document.getElementById("firstName").focus();
