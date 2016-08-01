@@ -1,7 +1,7 @@
 $(document).ready (function (){
   $("#firstName").focus();
   switchToolTip();
-  hideDefaultTextOnFocus('#lastName');
+  addDeafultText('#lastName','Enter your last name');
   $('#contactForm').validate({
   rules: {
   firstName: {
@@ -65,12 +65,14 @@ $('#qmark').mouseover(function() {
   $('#ttip').hide();
 });
 }
-function hideDefaultTextOnFocus(inputname){
+function addDeafultText(inputname,text){
+    $(inputname).attr("placeholder", text);
     $(inputname).data('holder', $(inputname).attr('placeholder'));
     $(inputname).focusin(function () {
         $(this).attr('placeholder', '');
     });
     $(inputname).focusout(function () {
         $(this).attr('placeholder', $(this).data('holder'));
+        $(this).attr("placeholder", text);
     });
 }
