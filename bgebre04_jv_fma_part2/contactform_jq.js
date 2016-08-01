@@ -1,6 +1,7 @@
 $(document).ready (function (){
   $("#firstName").focus();
   switchToolTip();
+  hideDefaultTextOnFocus('#lastName');
   $('#contactForm').validate({
   rules: {
   firstName: {
@@ -63,4 +64,13 @@ $('#qmark').mouseover(function() {
 }).mouseout(function(){
   $('#ttip').hide();
 });
+}
+function hideDefaultTextOnFocus(inputname){
+    $(inputname).data('holder', $(inputname).attr('placeholder'));
+    $(inputname).focusin(function () {
+        $(this).attr('placeholder', '');
+    });
+    $(inputname).focusout(function () {
+        $(this).attr('placeholder', $(this).data('holder'));
+    });
 }
