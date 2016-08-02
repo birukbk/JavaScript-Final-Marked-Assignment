@@ -49,7 +49,7 @@ $(document).ready (function (){
   });
 });
 
-/* [adds a custome validator for Health authority number]*/
+/* [adds a custom validator for Health authority number]*/
 $.validator.addMethod("validHAN",
   function (value){
     return /ZHA\d{6}/.test(value);
@@ -57,14 +57,14 @@ $.validator.addMethod("validHAN",
   "* You must enter a valid health authority number. (e.g ZHA346783)"
   );
 
-/*[adds a custome validator for telephone number] */
+/*[adds a custom validator for telephone number] */
 $.validator.addMethod("validTelephoneNumber",
   function (telephoneNumber,element){
     return this.optional(element) || /0\d{10}$| /.test(telephoneNumber);
   },
   "* You must enter a valid UK telephone number"
   );
-/* adds tool tip on mouse over and mouse out functionallity*/
+/* adds tool tip on mouse over and mouse out functionality*/
 function switchToolTip() { 
 $("#qmark").mouseover(function() {
   $("#ttip").show();
@@ -75,7 +75,7 @@ $("#qmark").mouseover(function() {
 
 /**
  * adds default text to input field, and clears out the text on focus out
- * @param {[inputname, deafult text]} inputname [name of the input to set the default text to and the text]
+ * @param {[inputname, default text]} inputname [name of the input to set the default text to and the text]
  */
 function addDeafultText(inputname,text){
     $(inputname).focusin(function () {

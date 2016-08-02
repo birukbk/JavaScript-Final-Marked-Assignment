@@ -24,7 +24,7 @@ function getMainRiskFactors(inputElement) {
     var riskFactors = [];
     for (index in inputElement) {
         if (inputElement[index].checked) {
-            //check if the value is grether or equal to 10    
+            //check if the value is >= 10 
             selectedValue = Number(inputElement[index].attributes.value.value);
             if (selectedValue >= 10) {
                 riskFactors.push(inputElement[index].attributes.name.value);
@@ -53,7 +53,7 @@ function getTotalScore(inputElement) {
 /**
  * [this determines the risk level of the user form the total score]
  * @param  {[number]} totalScore [the calculated total score of the user]
- * @return {[string]}[returns one of three catagories as a risk level]
+ * @return {[string]}[returns one of three categories as a risk level]
  */
 function determineRiskLevel(totalScore) {
     if (totalScore <= 15) {
@@ -77,8 +77,8 @@ function createHeadingMessage() {
     document.getElementById("messegeBoard").appendChild(heading);
 }
 /**
- * [concatinating and finish constracting the message for the message board to display, the users risk factors]
- * @return {[string]} [returns the message fully constracted plus the users main risk factor/s to display on the message board]
+ * [concatenating and finish constructing the message for the message board to display, the users risk factors]
+ * @return {[string]} [returns the message fully constructed plus the users main risk factor/s to display on the message board]
  */
 function createMainRiskFactorMessage() {
     var mainRiskFactorMessage;
@@ -93,16 +93,16 @@ function createMainRiskFactorMessage() {
     }
 }
 /**
- * [displays the fully constracted message to the message board for the user]
- * @param  {[string]} riskLevel [one of the the three risk levels to constract the appropriate message for the message board]
+ * [displays the fully constructed message to the message board for the user]
+ * @param  {[string]} riskLevel [one of the the three risk levels to construct the appropriate message for the message board]
  */
 function displayMessage(riskLevel) {
     clearMessege();
     var messeges = {
-        lowRisk: "Your results show that you currently have a low risk of developing diabetes. However, it is important that youmaintain a healthy lifestyle in terms of diet and exercise.",
+        lowRisk: "Your results show that you currently have a low risk of developing diabetes. However, it is important that you maintain a healthy lifestyle in terms of diet and exercise.",
         mediumRisk: "Your results show that you currently have a medium risk of developing diabetes. For more information on your risk factors, and what to do about them, please visit our diabetes advice website at ",
         highRisk: "Your results show that you currently have a HIGH risk of developing diabetes." + createMainRiskFactorMessage() + "We advise that you contact the Health Authority to discuss your risk factors as soon as you can.Please fill in our ",
-        extraInfo: " and a member of the Health Autorithy Diabetes team will be in contact with you."
+        extraInfo: " and a member of the Health Authority Diabetes team will be in contact with you."
     }
 
     var messege = document.createElement("p");
