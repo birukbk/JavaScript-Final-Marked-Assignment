@@ -1,10 +1,8 @@
 function init() {
     checkForm();
-    setDefaultTextForAllInputs();
+    setHintForAllFields();
     setFocus();
     switchToolTip();
-
-    
 }
 
 function checkForm() {
@@ -13,10 +11,6 @@ function checkForm() {
 		if (checkMandatoryFields()) {
 			validate("firstName","lastName","han","email","telephoneNumber");
 		}
-    
-		//console.log(checkMandatoryFields());
-		
-		
   return allowsubmit;
   
  };
@@ -140,12 +134,12 @@ function textHint(txtElem, defaultText) {
         }
     }
 }
-function setDefaultTextForAllInputs(){
-	textHint(document.getElementById("firstName"), "Enter first name");
-	textHint(document.getElementById("lastName"), "Enter last name");
+function setHintForAllFields(){
+	textHint(document.getElementById("firstName"), "Enter your first name");
+	textHint(document.getElementById("lastName"), "Enter your last name");
 	textHint(document.getElementById("han"), "e.g. ZHA346783");
-	textHint(document.getElementById("email"), "Enter email");
-	textHint(document.getElementById("telephoneNumber"), "Enter telephone number (optional)");
+	textHint(document.getElementById("email"), "Enter your email");
+	textHint(document.getElementById("telephoneNumber"), "Enter your telephone number(optional)");
 }
 function setFocus(){
 	document.getElementById("firstName").focus();
@@ -173,4 +167,4 @@ function switchToolTip() {
   }   
 }
 window.onload = init;
-//window.onload=checkForm;
+
