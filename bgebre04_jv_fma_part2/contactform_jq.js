@@ -7,14 +7,14 @@ $(document).ready (function (){
   addDeafultText("#telephoneNumber","Enter telephone number (optional)");
   $('#contactForm').validate({
   rules: {
-  firstName: {
-    required:true,
-    minlength:2
-  },
-   lastName: {
-    required:true,
-    minlength:2
-  },
+   firstName:{
+      required:true,
+      validFirstname:true
+    },
+   lastName:{
+      required:true,
+      validLastname:true
+    },
   title:'required',
   email: {
     required: true,
@@ -49,6 +49,21 @@ $(document).ready (function (){
   });
 });
 
+/* [adds a custom validator for first name]*/
+$.validator.addMethod("validFirstname",
+  function (firstName,element){
+    return this.optional(element) || /^[A-Za-z]{2,}$/.test(firstName);
+  },
+  "* First name can't contain numbers or other non-allowed alphabetic characters.And must contain more than one character."
+  );
+
+/* [adds a custom validator for last name]*/
+$.validator.addMethod("validLastname",
+  function (lastName,element){
+    return this.optional(element) || /^[A-Za-z\-]{2,}$/.test(lastName);
+  },
+  "* Last name can't contain numbers or other non-allowed alphabetic characters.Only hyphen(e.g Whittaker-Jones).And must contain more than one character."
+  );
 /* [adds a custom validator for Health authority number]*/
 $.validator.addMethod("validHAN",
   function (value){
@@ -64,6 +79,7 @@ $.validator.addMethod("validTelephoneNumber",
   },
   "* You must enter a valid UK telephone number"
   );
+
 /* adds tool tip on mouse over and mouse out functionality*/
 function switchToolTip() { 
 $("#qmark").mouseover(function() {
