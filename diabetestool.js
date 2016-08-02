@@ -77,7 +77,7 @@ function createHeadingMessage() {
     document.getElementById("messegeBoard").appendChild(heading);
 }
 /**
- * [concatenating and finish constructing the message for the message board to display, the users risk factors]
+ * [concatenating the message for the message board to display, the users risk factors]
  * @return {[string]} [returns the message fully constructed plus the users main risk factor/s to display on the message board]
  */
 function createMainRiskFactorMessage() {
