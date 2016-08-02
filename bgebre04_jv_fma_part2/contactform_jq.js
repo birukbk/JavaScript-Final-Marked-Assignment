@@ -74,9 +74,8 @@ $("#qmark").mouseover(function() {
 }
 
 /**
- * adds default text to the input provided as argument
- * @param {[inputname]} inputname [name of the input to set the default text to]
- * @param {[string]} text      [the default text]
+ * adds default text to input field, and clears out the text on focus out
+ * @param {[inputname, deafult text]} inputname [name of the input to set the default text to and the text]
  */
 function addDeafultText(inputname,text){
     $(inputname).focusin(function () {

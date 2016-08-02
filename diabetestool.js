@@ -15,8 +15,8 @@ function checkForm() {
 }
 
 /**
- * [getMainRiskFactors getting user chosen fields to prepare message for the main risk factors]
- * @param inputElement [input elements that are checked]
+ * [getMainRiskFactors determining if user chosen fields are riskfactros and prepare message for the main risk factors]
+ * @param inputElement [input elements that are checked and values that are >= 10 ]
  * @return {[array of main risk factors]}   
  */
 function getMainRiskFactors(inputElement) {
@@ -36,8 +36,8 @@ function getMainRiskFactors(inputElement) {
 
 /**
  * [calculating the total score of the user risk from the chosen elements]
- * @param  {[checked input elements]} inputElement [user checked attribute values]
- * @return {[integer]}              [sum of the checked elements]
+ * @param  {[checked input elements]} [user checked attribute values]
+ * @return {[number]}[sum of the values of the checked elements]
  */
 function getTotalScore(inputElement) {
     var index = 0;
@@ -53,7 +53,7 @@ function getTotalScore(inputElement) {
 /**
  * [this determines the risk level of the user form the total score]
  * @param  {[number]} totalScore [the calculated total score of the user]
- * @return {[string]}            [returns one of three catagories]
+ * @return {[string]}[returns one of three catagories as a risk level]
  */
 function determineRiskLevel(totalScore) {
     if (totalScore <= 15) {
@@ -68,7 +68,7 @@ function determineRiskLevel(totalScore) {
     return risk;
 }
 /**
- * [creates the first bit of the heading messages, to be posted on the message board]
+ * [creates the heading messages for the message board]
  */
 function createHeadingMessage() {
     var heading = document.createElement("h3");
@@ -77,8 +77,8 @@ function createHeadingMessage() {
     document.getElementById("messegeBoard").appendChild(heading);
 }
 /**
- * [concatinating and finish constracting the message for the message board to display the users risk factors]
- * @return {[string]} [returns the message fully constracted with users main risk factor/s to display on the message board]
+ * [concatinating and finish constracting the message for the message board to display, the users risk factors]
+ * @return {[string]} [returns the message fully constracted plus the users main risk factor/s to display on the message board]
  */
 function createMainRiskFactorMessage() {
     var mainRiskFactorMessage;
@@ -138,7 +138,7 @@ function displayMessage(riskLevel) {
 }
 /**
  * [changes the message board color according to the users risk level]
- * @param  {[string]} riskLevel [one of the theree risk levels]
+ * @param  {[string]} riskLevel [one of the three risk levels]
  */
 function matchMessageBoardColorTo(riskLevel) {
     if (riskLevel === "lowRisk") {
