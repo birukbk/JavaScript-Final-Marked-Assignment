@@ -9,7 +9,7 @@ $(document).ready (function (){
   rules: {
    firstName:{
       required:true,
-      validFirstname:true
+      validFirstname:true,
     },
    lastName:{
       required:true,
@@ -31,19 +31,17 @@ $(document).ready (function (){
   messages:
   {
     firstName:{
-      required:"*first name is required. Please enter first name",
-      minlength:"First name must consist of at least two characters."
+      required:"*first name is required. Please enter first name.",
     },
     lastName:{
-      required:"*last name is required. Please enter last name",
-      minlength:"Last name must consist of at least two characters."
+      required:"*last name is required. Please enter last name.",
     },
     title:{
-      required:"*Title is required,please select a title"
+      required:"*Title is required,please select a title."
       
     },
     email:{
-      required:"email is required, please enter email"
+      required:"email is required, please enter email."
     }
   }
   });
@@ -52,7 +50,7 @@ $(document).ready (function (){
 /* [adds a custom validator for first name]*/
 $.validator.addMethod("validFirstname",
   function (firstName,element){
-    return this.optional(element) || /^[A-Za-z]{2,}$/.test(firstName);
+    return /^[A-Za-z]{2,}$/.test(firstName);
   },
   "* First name can't contain numbers or other non-allowed alphabetic characters.And must contain more than one character."
   );
@@ -60,7 +58,7 @@ $.validator.addMethod("validFirstname",
 /* [adds a custom validator for last name]*/
 $.validator.addMethod("validLastname",
   function (lastName,element){
-    return this.optional(element) || /^[A-Za-z\-]{2,}$/.test(lastName);
+    return /^[A-Za-z\-]{2,}$/.test(lastName);
   },
   "* Last name can't contain numbers or other non-allowed alphabetic characters.Only hyphen(e.g Whittaker-Jones).And must contain more than one character."
   );
@@ -77,7 +75,7 @@ $.validator.addMethod("validTelephoneNumber",
   function (telephoneNumber,element){
     return this.optional(element) || /0\d{10}$| /.test(telephoneNumber);
   },
-  "* You must enter a valid UK telephone number"
+  "* You must enter a valid UK telephone number."
   );
 
 /* adds tool tip on mouse over and mouse out functionality*/
