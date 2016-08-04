@@ -65,7 +65,7 @@ $.validator.addMethod("validLastname",
 /* [adds a custom validator for Health authority number]*/
 $.validator.addMethod("validHAN",
   function (value){
-    return /ZHA\d{6}/.test(value);
+    return /ZHA\d{6}$/.test(value);
   },
   "* You must enter a valid health authority number. (e.g ZHA346783)"
   );
