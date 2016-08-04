@@ -12,13 +12,12 @@ function checkForm() {
             validate("firstName", "lastName", "han", "email", "telephoneNumber");
         }
         return allowsubmit;
-
     };
 }
 /**
  * default text to input fields on focus and on blur.
- * @param  {[select element]} txtElem     [description]
- * @param  {[string]} defaultText [the defult text to display on the input]
+ * @param  {[select element]} 
+ * @param  {[string]} defaultText [the default text to display on the input]
  */
 function textHint(txtElem, defaultText) {
     txtElem.value = defaultText;
@@ -61,8 +60,8 @@ function setFocus() {
 
 
 /**
- * check if mandatory fields complited and if not shows error
- * @return {[boolean]} [shows errors if the reqired field is empty.]
+ * check if mandatory fields completed and if not shows error
+ * @return {[boolean]} [shows errors if the required field is empty.]
  */
 function checkMandatoryFields() {
     var allowsubmit = true;
