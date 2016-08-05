@@ -17,7 +17,7 @@ function checkForm() {
 /**
  * default text to input fields on focus and on blur.
  * @param  {[select element]} 
- * @param  {[string]} defaultText [the default text to display on the input]
+ * @param  defaultText [the default text to display on the input]
  */
 function textHint(txtElem, defaultText) {
     txtElem.value = defaultText;
@@ -61,7 +61,7 @@ function setFocus() {
 
 /**
  * check if mandatory fields completed and if not shows error
- * @return {[boolean]} [shows errors if the required field is empty.]
+ * @return [shows errors if the required field is empty.]
  */
 function checkMandatoryFields() {
     var allowsubmit = true;
@@ -102,8 +102,8 @@ function checkMandatoryFields() {
 
 /**
  * validate firstName, lastName, han, email, telephoneNumber fields
- * @param  {[string]} [pass the id of the input to be validated]
- * @return {[boolean]}   [show error message if return is false]
+ * @param  [pass the id of the input to be validated]
+ * @return [show error message if return is false]
  */
 function validate(firstName, lastName, han, email, telephoneNumber) {
     var allowsubmit = true;

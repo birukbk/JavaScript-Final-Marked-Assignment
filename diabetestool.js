@@ -37,7 +37,7 @@ function getMainRiskFactors(inputElement) {
 /**
  * [calculating the total score of the user risk from the chosen elements]
  * @param  {[checked input elements]} [user checked attribute values]
- * @return {[number]}[sum of the values of the checked elements]
+ * @return [sum of the values of the checked elements]
  */
 function getTotalScore(inputElement) {
     var index = 0;
@@ -53,7 +53,7 @@ function getTotalScore(inputElement) {
 /**
  * [this determines the risk level of the user form the total score]
  * @param  {[number]} totalScore [the calculated total score of the user]
- * @return {[string]}[returns one of three categories as a risk level]
+ * @return [returns one of three categories as a risk level]
  */
 function determineRiskLevel(totalScore) {
     if (totalScore <= 15) {
@@ -78,7 +78,7 @@ function createHeadingMessage() {
 }
 /**
  * [concatenating the message for the message board to display, the users risk factors]
- * @return {[string]} [returns the message fully constructed plus the users main risk factor/s to display on the message board]
+ * @return [returns the message fully constructed plus the users main risk factor/s to display on the message board]
  */
 function createMainRiskFactorMessage() {
     var mainRiskFactorMessage;
@@ -94,7 +94,7 @@ function createMainRiskFactorMessage() {
 }
 /**
  * [displays the fully constructed message to the message board for the user]
- * @param  {[string]} riskLevel [one of the the three risk levels to construct the appropriate message for the message board]
+ * @param  riskLevel [one of the the three risk levels to construct the appropriate message for the message board]
  */
 function displayMessage(riskLevel) {
     clearMessege();
@@ -138,7 +138,7 @@ function displayMessage(riskLevel) {
 }
 /**
  * [changes the message board color according to the users risk level]
- * @param  {[string]} riskLevel [one of the three risk levels]
+ * @param riskLevel [one of the three risk levels]
  */
 function matchMessageBoardColorTo(riskLevel) {
     if (riskLevel === "lowRisk") {
