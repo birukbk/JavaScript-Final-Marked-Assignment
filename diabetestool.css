@@ -1,78 +1,80 @@
-
 body {
-font-family: Verdana, Arial, sans-serif;
+    font-family: Verdana, Arial, sans-serif;
 }
 
 .sectionheading {
-color: #ff0000;
+    color: #ff0000;
 }
 
-#pageheading{
-font-style: italic; 
+#pageheading {
+    font-style: italic;
 }
 
-.error{
-  display:none;
-  color:red;
-  padding-left: 1em;
+.error {
+    display: none;
+    color: red;
+    padding-left: 1em;
 }
 
 #controls {
-width:90%;
-padding: 1em;
-align-self: center;
-background-color: #FFF09F;
+    width: 90%;
+    padding: 1em;
+    align-self: center;
+    background-color: #FFF09F;
 }
+
 #messegeBoard {
-width:90%;
-padding: 1em;
-display: none;
-background-color: #FFD700;
-}
-.question{
-	margin-top: 10px;
-	display:inline-block;
-	padding:4px;
-	padding-right: 70px;
-	text-align: right;
-	width:180px;
+    width: 90%;
+    padding: 1em;
+    display: none;
+    background-color: #FFD700;
 }
 
-.answer{
-	display:inline-block;
-	padding-right: 70px;
-	text-align: right;
-	width:160px;	
+.question {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 4px;
+    padding-right: 70px;
+    text-align: right;
+    width: 180px;
 }
 
-.error{
-  display:none;
-  color:red;
-  padding-left: 1em;
+.answer {
+    display: inline-block;
+    padding-right: 70px;
+    text-align: right;
+    width: 160px;
 }
-.validationError{
-  color:red;
-  padding-left: 1em;
-  font-size: 70%;
+
+.error {
+    display: none;
+    color: red;
+    padding-left: 1em;
 }
-#firstNameError,#lastNameError,#emailError,#hanError,#telephoneNumberError{
- display:none;
+
+.validationError {
+    color: red;
+    padding-left: 1em;
+    font-size: 70%;
 }
+
+#firstNameError,
+#lastNameError,
+#emailError,
+#hanError,
+#telephoneNumberError {
+    display: none;
+}
+
 .tooltip {
-		position:absolute;
-	left:220px; 
-	top:210px;
-	display:none;
-	width:125px;
-	border:1px solid red;
-	background:#FFD700 top left no-repeat;
-	color: balck;
-	padding: 5px 3px 5px 5px;
-	font:0.65em Arial, Helvetica, sans-serif;
+    position: absolute;
+    left: 220px;
+    top: 210px;
+    display: none;
+    width: 125px;
+    border: 1px solid red;
+    background: #FFD700 top left no-repeat;
+    color: balck;
+    padding: 5px 3px 5px 5px;
+    font: 0.65em Arial, Helvetica, sans-serif;
 }
-
-
-
-
-
-

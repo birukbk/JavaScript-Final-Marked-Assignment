@@ -152,6 +152,7 @@ function matchMessageBoardColorTo(riskLevel) {
     }
 
 }
+
 function clearMessege() {
     var x = document.getElementById("messegeBoard");
     while (x.hasChildNodes()) {
