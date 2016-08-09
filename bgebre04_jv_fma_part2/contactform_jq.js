@@ -1,3 +1,6 @@
+/*the code uses a JQuery form validation
+ plugin (http://jqueryvalidation.org)
+ */
 $(document).ready(function() {
     $("#firstName").focus();
     switchToolTip();
@@ -77,7 +80,9 @@ $.validator.addMethod("validTelephoneNumber",
     "* You must enter a valid UK telephone number."
 );
 
-/* adds tool tip on mouse over and mouse out functionality*/
+/* adds tool tip on mouse over and mouse out functionality
+based on the javaScript class example code(session 5 and session 8).
+*/
 function switchToolTip() {
     $("#qmark").mouseover(function() {
         $("#ttip").show();

@@ -161,9 +161,9 @@ function clearError(errorId) {
     var er = errorId + "Error";
     document.getElementById(er).style.display = "none";
 }
-/**
- * show tool tip
- */
+/* adds tool tip on mouse over and mouse out functionality
+based on the javaScript class example code(session 5 and session 8).
+*/
 function switchToolTip() {
     document.getElementById('qmark').onmouseover = function() {
         var toolTip = document.getElementById('ttip');
